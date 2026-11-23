@@ -1,0 +1,17 @@
+Date/time: 2026-11-22 13:33:02 UTC
+Python: Python 3.13.9
+
+--- 02-idor / vulnerable ---
+User 1 requesting their own booking (ID 1): {'id': 1, 'owner_id': 1, 'destination': 'Galway', 'note': 'Window seat requested'}
+User 1 requesting booking ID 2: {'id': 2, 'owner_id': 2, 'destination': 'Cork', 'note': 'Private itinerary: client meeting at 09:00'}
+Sequential IDs make another user's identifier guessable.
+RESULT: EXPLOITED
+Exit code: 0
+
+--- 02-idor / mitigated ---
+User 1 requesting their own booking (ID 1): {'id': 1, 'owner_id': 1, 'destination': 'Galway', 'note': 'Window seat requested'}
+User 1 requesting booking ID 2: None
+Sequential IDs make another user's identifier guessable.
+RESULT: BLOCKED
+Exit code: 1
+
