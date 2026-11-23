@@ -1,0 +1,19 @@
+Date/time: 2026-11-22 13:33:02 UTC
+Python: Python 3.13.9
+
+--- 01-injection / vulnerable ---
+Legitimate search: [{'id': 1, 'title': 'Maple field guide', 'is_public': 1}]
+Payload: "' OR '1'='1' -- "
+Payload result: [{'id': 1, 'title': 'Maple field guide', 'is_public': 1}, {'id': 2, 'title': 'Coastal birds', 'is_public': 1}, {'id': 3, 'title': 'Staff access codes', 'is_public': 0}, {'id': 4, 'title': 'Garden plants', 'is_public': 1}]
+Private record exposed: True
+RESULT: EXPLOITED
+Exit code: 0
+
+--- 01-injection / mitigated ---
+Legitimate search: [{'id': 1, 'title': 'Maple field guide', 'is_public': 1}]
+Payload: "' OR '1'='1' -- "
+Payload result: []
+Private record exposed: False
+RESULT: BLOCKED
+Exit code: 1
+
