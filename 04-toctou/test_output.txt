@@ -1,0 +1,17 @@
+Date/time: 2026-11-22 13:33:05 UTC
+Python: Python 3.13.9
+
+--- 04-toctou / vulnerable ---
+Runs where the accepted total exceeded the initial balance: 20/20
+Runs with an inconsistent balance: 20/20
+Each run starts 8 threads at the same time; the outcome is probabilistic.
+RESULT: EXPLOITED
+Exit code: 0
+
+--- 04-toctou / mitigated ---
+Runs where the accepted total exceeded the initial balance: 0/20
+Runs with an inconsistent balance: 0/20
+Each run starts 8 threads at the same time; the outcome is probabilistic.
+RESULT: BLOCKED
+Exit code: 1
+
