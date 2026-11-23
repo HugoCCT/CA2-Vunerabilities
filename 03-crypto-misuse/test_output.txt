@@ -1,0 +1,25 @@
+Date/time: 2026-11-22 13:33:02 UTC
+Python: Python 3.13.9
+
+--- 03-crypto-misuse / vulnerable ---
+Identical hashes for Alice and Bob (same password): True
+Legitimate login with the correct password: True
+Attempts: 6 of 12 (same time budget for both versions: 0.5s)
+Guess rate: 689,184 guesses per second
+Total time: 0.000009s; average per attempt: 0.001ms
+Recovered password: welcome123
+RESULT: EXPLOITED
+Exit code: 0
+
+--- 03-crypto-misuse / mitigated ---
+Identical hashes for Alice and Bob (same password): False
+Legitimate login with the correct password: True
+Attempts: 2 of 12 (same time budget for both versions: 0.5s)
+Guess rate: 3 guesses per second
+Total time: 0.741328s; average per attempt: 370.664ms
+SHA-256 average: 0.019125ms per attempt
+scrypt/SHA-256 cost ratio on the same guesses: 19381x
+Password not recovered within the defined budget.
+RESULT: BLOCKED
+Exit code: 1
+
